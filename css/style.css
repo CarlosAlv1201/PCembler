@@ -28,6 +28,12 @@
   --poppins-line-spacing-50: 50px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body,
 h1,
 h2,
@@ -176,15 +182,12 @@ h2 {
 h1 {
   font-family: var(--ff-poppins);
   font-weight: var(--poppins-style-semibold);
-  font-size: var(--poppins-size-55);
+  font-size: clamp(2rem, 7vw, 3.4rem);
   line-height: var(--poppins-line-spacing-50);
   letter-spacing: var(--poppins-character-spacing-0);
   color: var(--negro);
 }
-.container {
-  /*margin-inline: auto;
-  width: min(90%, 75.2rem);*/
-}
+
 section {
   padding: 4rem 0;
 }
@@ -198,38 +201,27 @@ section {
   backdrop-filter: blur(20px);
 }
 
-.container-nav-logo,
-.navbar,
-.registro {
+.enlaces,
+.registrolinks {
   display: flex;
 }
 
 .container-logo {
-  flex: 0.3;
-}
-.logo {
   margin-left: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.navigation {
-  margin: 50px;
 
-  justify-content: flex-start;
+.navigation {
   flex: 3;
 }
-.navbar {
-  width: 60%;
+.enlaces {
   list-style: none;
   justify-content: space-around;
 }
-.registrolink {
+.registrolinks {
   flex: 1;
   justify-content: flex-end;
-}
-.registro {
-  list-style: none;
-  justify-content: space-evenly;
 }
 
 .main-container-landing {
@@ -242,28 +234,28 @@ img {
 
 .s-slider {
   display: inline-block;
-  padding: 10rem 0 3rem 0;
+  padding: 10.5rem 0 3.5rem 0;
 }
 .empezar {
   font-family: var(--ff-poppins);
   font-weight: var(--poppins-style-semibold);
-
-  padding: 0.625rem 2.75rem;
+  padding: 10px 44px;
   background: transparent linear-gradient(90deg, #fcd011 0%, #fde060 100%) 0 0
     no-repeat padding-box;
   border-radius: 0.7rem;
   cursor: pointer;
   border: none;
   text-decoration: none;
-  font-size: 1.875rem;
+  font-size: 30px;
   color: var(--azul);
   box-shadow: 0 0 20px 0 rgba(253, 224, 96, 0.5),
     0 0 20px 0 rgba(253, 224, 96, 0.5);
   cursor: pointer;
-}
-.empezar:hover {
   transition-duration: 0.3s;
-  font-size: 2.1875rem;
+}
+
+.empezar:hover {
+  font-size: 35px;
 }
 .s-slider .c-imgtitle {
   display: flex;
@@ -278,10 +270,10 @@ img {
 
 .titulo-boton {
   padding: 1rem 7rem 1rem 3rem;
-  width: 35%;
+  width: min(600px, calc(50% + 100px));
 }
 .titulo-boton h1 {
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 .c-tres-puntos {
   margin: 0 auto;
@@ -296,7 +288,6 @@ img {
   flex-basis: 100%;
   padding: 0;
   flex-direction: row;
-  height: 22.5rem;
 }
 .s-promociones img {
   width: 40%;
@@ -313,12 +304,46 @@ img {
 .c-panel-izquierda {
   text-align: center;
   padding: 2rem;
+  height: 22.5rem;
 }
 
 .c-img-tarjetas,
 .c-img-laptops {
   display: flex;
   justify-content: center;
+}
+
+.s-prime {
+  background-image: linear-gradient(to top, #000f16, #315b8d);
+  display: flex;
+  padding: 3rem;
+  justify-content: space-around;
+}
+.c-prime h1,
+.c-prime h2,
+.c-prime h3 {
+  color: white;
+  margin: 2.5rem;
+}
+.suscribete {
+  font-family: var(--ff-poppins);
+  font-weight: var(--poppins-style-semibold);
+  padding: 10px 44px;
+  background: transparent linear-gradient(90deg, #fcd011 0%, #fde060 100%) 0 0
+    no-repeat padding-box;
+  border-radius: 2rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-size: 30px;
+  color: var(--azul);
+  box-shadow: 0 0 20px 0 rgba(253, 224, 96, 0.5),
+    0 0 20px 0 rgba(253, 224, 96, 0.5);
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.suscribete {
+  font-size: 35px;
 }
 
 /*SECCION QUÉ HACEMOS*/
@@ -377,23 +402,30 @@ p {
   .s-promociones {
     flex-direction: column;
   }
+
   .c-imgtitle {
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 0;
+  }
+  .s-prime {
+    text-align: center;
+    flex-direction: column;
+
+    align-items: center;
+  }
+  .s-prime img {
+    width: 45%;
   }
 
   .c-imgtitle h1 {
-    width: 140%;
-    font-size: 2.5rem;
     line-height: 3rem;
   }
   .c-imgtitle img {
-    width: 50%;
+    width: 45%;
   }
-  .c-img-tarjetas,
-  .c-img-laptops {
-    flex-direction: column;
+  .titulo-boton {
+    padding: 1.5em;
+    padding-bottom: 3em;
   }
   .c-imgs-1rafila,
   .c-imgs-2dafila {
